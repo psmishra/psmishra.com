@@ -45,6 +45,7 @@ def main(vault):
     if CONTENT.exists():
         shutil.rmtree(CONTENT)
     (CONTENT / "writing").mkdir(parents=True)
+    (CONTENT / "writing" / ".gitkeep").write_text("")
     n = 0
     for note in [src / "index.md", *sorted((src / "writing").glob("*.md"))]:
         if not note.is_file():
